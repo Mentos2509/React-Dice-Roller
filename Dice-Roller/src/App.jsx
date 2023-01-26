@@ -35,7 +35,7 @@ function App() {
     <div className="App">
       <div>You can't roll like Elvis</div>
       <div>
-        <button onClick={() => numberOfRolls(4, inputValue)}>d4</button>
+        <button onClick={() => roll(4, inputValue)}>d4</button>
         <button onClick={() => roll(6, inputValue)}>d6</button>
         <button onClick={() => roll(8, inputValue)}>d8</button>
         <button onClick={() => roll(10, inputValue)}>d10</button>
