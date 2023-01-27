@@ -8,6 +8,11 @@ function App() {
   const [rollResult, setRollResults] = useState([]);
   const [bonusPoints, setBonusPoints] = useState(0);
 
+  console.log(rollResult)
+  console.log(bonusPoints)
+  console.log(inputValue)
+  console.log(result)
+
   const numberOfRolls = (max, inputValue) => {
     let newResult = [];
     let currentResults = [];
@@ -73,17 +78,15 @@ function App() {
           <div>
             <p>Results of dice sum</p>
             <div>{rollResult.reduce((a, b) => a + b, 0) + bonusPoints}</div>
-            {bonusPoints > 0 && <div>{` BP: ${bonusPoints} `}</div>  }
+            {bonusPoints > 0 && <div>{` BP: ${bonusPoints} `}</div>}
           </div>
         ) : (
           <div>
             <p>Results of dice sum</p>
-            {rollResult.reduce((a, b) => a + b, 0)+ bonusPoints}
+            {rollResult.reduce((a, b) => a + b, 0) + bonusPoints}
             <p>Results of each dice</p>
             <div>{` RR: ${rollResult.join(" + ")} `}</div>
             <div>{` BP: ${bonusPoints} `}</div>
-            
-          
           </div>
         )}
       </div>
@@ -99,20 +102,20 @@ function App() {
           placeholder="Number of Rolls"
         />
         <button onClick={() => addOneDiceRoll()}>+</button>
-         </div>
-          <label id={'Bonus Points'}>Bonus Points</label>
-         <div>
-          <button onClick={() => deductOneBonusPoints()}>-</button>
-          <input
+      </div>
+      <label id={"Bonus Points"}>Bonus Points</label>
+      <div>
+        <button onClick={() => deductOneBonusPoints()}>-</button>
+        <input
           placeholder="Bonus points"
           value={bonusPoints}
           min={1}
           max={10}
           onChange={(e) => e.target.value}
-          id='Bonus Points'
-          />
-          <button onClick={() => addOneBonusPoints()}>+</button>
-     </div>
+          id="Bonus Points"
+        />
+        <button onClick={() => addOneBonusPoints()}>+</button>
+      </div>
 
       <div>
         History
