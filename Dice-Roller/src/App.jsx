@@ -5,29 +5,32 @@ import "./App.css";
 function App() {
   const [result, setResult] = useState([]);
   const [inputValue, setInputValue] = useState(1);
-  const [rollResult, setRollResults] = useState(0);
-  
-  
-  
+  const [rollResult, setRollResults] = useState([]);
+
   const numberOfRolls = (max, inputValue) => {
-    let newResult = []
+    let newResult = [];
+    let currentResults = [];
     for (let i = 0; i < inputValue; i++) {
       newResult.push({
         dice: `d${max}`,
         roll: Math.ceil(Math.random() * max),
-        id: uuidv4(),
-      })
+      });
+      currentResults.push(newResult.map((e) => e.roll));
+      setRollResults(currentResults[currentResults.length - 1]);
     }
-   const multipleRollDiceValue = newResult.reduce((accumulator, value)=>accumulator + value.roll,0);
-    newResult.roll = multipleRollDiceValue
-    newResult.dice = `d${max}`
-    newResult=[...result,newResult]
-     
+
+    const multipleRollDiceValue = newResult.reduce(
+      (accumulator, value) => accumulator + value.roll,
+      0
+    );
+    newResult = {
+      dice: `d${max}`,
+      roll: multipleRollDiceValue,
+      id: uuidv4(),
+    };
+    newResult = [newResult, ...result];
     setResult(newResult);
   };
-
-
-  console.log(result);
 
   const addOne = () => {
     setInputValue(inputValue + 1);
@@ -36,6 +39,7 @@ function App() {
     setInputValue(inputValue - 1);
   };
 
+  console.log("rollResult:", rollResult);
   return (
     <div className="App">
       <div>You can't roll like Elvis</div>
@@ -48,7 +52,12 @@ function App() {
         <button onClick={() => numberOfRolls(20, inputValue)}>d20</button>
         <button onClick={() => numberOfRolls(100, inputValue)}>d100</button>
       </div>
-
+      <div>
+        <p>Results of dice sum</p>
+        {rollResult.reduce((a,b)=>a+b,0)}
+        <p>Results of each dice</p>
+        {rollResult.join(" + ")}
+      </div>
       <label id="rolls">Number of dices</label>
       <div>
         <button onClick={() => deductOne()}>-</button>
@@ -78,5 +87,3 @@ function App() {
 }
 
 export default App;
-
-
