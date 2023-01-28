@@ -8,10 +8,10 @@ function App() {
   const [rollResult, setRollResults] = useState([]);
   const [bonusPoints, setBonusPoints] = useState(0);
 
-  console.log(rollResult)
-  console.log(bonusPoints)
-  console.log(inputValue)
-  console.log(result)
+  console.log(rollResult);
+  console.log(bonusPoints);
+  console.log(inputValue);
+  console.log(result);
 
   const numberOfRolls = (max, inputValue) => {
     let newResult = [];
