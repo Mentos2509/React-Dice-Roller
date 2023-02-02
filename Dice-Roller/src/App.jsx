@@ -8,7 +8,6 @@ function App() {
   const [rollResult, setRollResults] = useState([]);
   const [bonusPoints, setBonusPoints] = useState(0);
 
-
   const numberOfRolls = (max, inputValue) => {
     let newResult = [];
     let currentResults = [];
@@ -21,7 +20,6 @@ function App() {
       setRollResults(currentResults[currentResults.length - 1]);
     }
 
-    
     const multipleRollDiceValue = newResult.reduce(
       (accumulator, value) => accumulator + value.roll,
       0
