@@ -20,7 +20,6 @@ function App() {
       setRollResults(currentResults[currentResults.length - 1]);
     }
 
-    
     const multipleRollDiceValue = newResult.reduce(
       (accumulator, value) => accumulator + value.roll,
       0
