@@ -8,7 +8,6 @@ function App() {
   const [rollResult, setRollResults] = useState([]);
   const [bonusPoints, setBonusPoints] = useState(0);
   
-  
   const numberOfRolls = (max, inputValue) => {
     let newResult = [];
     let currentResults = [];
