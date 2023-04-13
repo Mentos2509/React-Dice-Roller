@@ -9,9 +9,11 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     
+    
   }
   html {
     font-size: ${theme.sizes.base};
+   
   }
   body {
     font-family: ${theme.font.family};
@@ -21,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.3;
     min-height: 620px;
     background-color: white;
+    
     
   }
 `;

@@ -1,102 +1,119 @@
 import styled from "styled-components";
 
-// 
+//
 
 export const DiceButtonStyled = styled.button`
   font-size: ${({ theme }) => theme.sizes.s};
   font-weight: ${({ theme }) => theme.weights.light};
-  padding: 2rem;
-  margin: 2rem 0 0 0;
-  border-radius: 3px;
+  padding: 1rem;
+  border-radius: 0.7rem;
   cursor: pointer;
-  background-color: ${({ theme }) => theme.colors.light};
+  background-color: rgb(140, 188, 140);
   border: ${({ theme }) => `1px solid ${theme.colors.light}`};
-  width: 20%;
   transition: background-color 0.2s ease;
   &:hover {
     background-color: rgb(132 165 140);
   }
+  border: 2px solid ${({ theme }) => theme.colors.green};
 `;
 
 export const DiceButtonDivStyled = styled.div`
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    padding: 0 10%;
-    
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0 10%;
 `;
-export const BodyDivStyled = styled.div`
-
-    
+export const HistoryDivStyle = styled.div`
+  border: 2px solid ${({ theme }) => theme.colors.green};
+  width: 20%;
+  border-radius: 0.7rem;
+  margin: 1rem 0;
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 `;
 
+export const DivStyle = styled.div`
+  border: 2px solid ${({ theme }) => theme.colors.green};
+  width: 20%;
+  border-radius: 0.7rem;
+  margin: 1rem 0;
+`;
 
+export const ParaStyle = styled.p`
+  text-decoration: underline;
+  font-weight: ${({ theme }) => theme.weights.bold};
+`;
 
+export const AppDivStyle = styled.div`
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 export const InputStyled = styled.input`
-//   border: 2px solid ${({ theme }) => theme.colors.green};
-//   outline: 0;
-//   border-radius: 0.7rem;
-//   display: block;
-//   width: 100%;
-//   min-height: 5rem;
-//   font-size: ${({ theme }) => theme.sizes.s};
-//   margin-top: 0.5rem;
-//   padding: 0 1.5rem;
-//   color: ${({ theme }) => theme.colors.primary};
-//   font-weight: ${({ theme }) => theme.weights.light};
-// `;
+  border: 2px solid ${({ theme }) => theme.colors.green};
+  outline: 0;
+  border-radius: 0.7rem;
+  width: 20%;
+  min-height: 3rem;
+  font-size: ${({ theme }) => theme.sizes.s};
+  margin: 0.5rem;
+  padding: 0 1.5rem;
+  color: ${({ theme }) => theme.colors.primary};
+  font-weight: ${({ theme }) => theme.weights.light};
+  //
+`;
 
-// export const FormRowStyled = styled.div`
-//   margin-top: 1.5rem;
-// `;
+export const TitleParaStyle = styled.p`
+  margin: 1rem;
+  font-weight: ${({ theme }) => theme.weights.bold};
+  letter-spacing: 0.1rem;
+  font-size: ${({ theme }) => theme.sizes.l};
+`;
 
-// export const LabelStyled = styled.label`
-//   display: block;
-//   margin-bottom: .5rem;
-// `;
+export const ResultParaStyle = styled.p`
+  font-weight: ${({ theme }) => theme.weights.bold};
+  font-size: ${({ theme }) => theme.sizes.l};
+`;
 
-// export const FormStyled = styled.form`
-//   max-width: 520px;
-//   width: 100%;
-//   margin: 50px auto;
-// `;
+export const LabelStyled = styled.label`
+  display: block;
+  margin: 1rem 0;
+`;
 
-// export const SelectStyled = styled.select`
-//   border: 2px solid ${({ theme }) => theme.colors.green};
-//   outline: 0;
-//   border-radius: 0.7rem;
-//   width: 100%;
-//   min-height: 5rem;
-//   font-size: ${({ theme }) => theme.sizes.s};
-//   margin-top: 0.5rem;
-//   padding: 0 1.5rem;
-//   color: ${({ theme }) => theme.colors.primary};
-//   font-weight: ${({ theme }) => theme.weights.light};
-// `;
+export const MathSignButtonStyled = styled.button`
+  cursor: pointer;
+  background-color: rgb(140, 188, 140);
+  border: ${({ theme }) => `1px solid ${theme.colors.light}`};
+  transition: background-color 0.2s ease;
+  &:hover {
+    background-color: rgb(132 165 140);
+  }
+  border: 2px solid ${({ theme }) => theme.colors.green};
+`;
 
-// export const ButtonStyled = styled.button`
-//   font-size: ${({ theme }) => theme.sizes.s};
-//   font-weight: ${({ theme }) => theme.weights.light};
-//   padding: 2rem;
-//   margin: 2rem 0 0 0;
-//   border-radius: 3px;
-//   cursor: pointer;
-//   background-color: ${({ theme }) => theme.colors.light};
-//   border: ${({ theme }) => `1px solid ${theme.colors.light}`};
-//   width: 100%;
-//   transition: background-color 0.2s ease;
-//   &:hover {
-//     background-color: rgb(132 165 140);
-//   }
-// `;
+export const ClearButtonStyle = styled.button`
+  cursor: pointer;
+  background-color: rgb(140, 188, 140);
+  border-radius: 0.7rem;
+  border: ${({ theme }) => `1px solid ${theme.colors.light}`};
+  transition: background-color 0.2s ease;
+  &:hover {
+    background-color: rgb(132 165 140);
+  }
+  border: 2px solid ${({ theme }) => theme.colors.green};
+`;
 
-// export const InfoStyled = styled.p`
-//   color: ${({ theme }) => theme.colors.grey};
-//   font-size: ${({ theme }) => theme.sizes.xs};
-//   margin: 0.4rem 0 0 0;
-// `;
+export const HistorySpaceDivStyled = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1rem 0;
+`;
 
-// export const ContainerStyled = styled.div`
-//   padding: 0 1.5rem;
-// `;
+export const HistoryListDiv = styled.div`
+  max-height: 200px;
+  overflow-x: scroll;
+`;
