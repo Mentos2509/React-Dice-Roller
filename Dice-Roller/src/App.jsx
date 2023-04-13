@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import "./App.css";
+import { DiceButtonStyled, DiceButtonDivStyled, BodyDivStyled } from '../src/styles/styles'
+import { ThemeProvider } from "styled-components";
+import { ThemeConfig } from "./theme/ThemeConfig";
+import GlobalStyle from "./theme/GlobalStyle";
 
 function App() {
   const [result, setResult] = useState([]);
@@ -59,17 +63,19 @@ function App() {
 
   console.log("rollResult:", rollResult);
   return (
+    <ThemeProvider theme={ThemeConfig}>
+      <GlobalStyle/>
     <div className="App">
       <div>You can't roll like Elvis</div>
-      <div>
-        <button onClick={() => numberOfRolls(4, inputValue)}>d4</button>
-        <button onClick={() => numberOfRolls(6, inputValue)}>d6</button>
-        <button onClick={() => numberOfRolls(8, inputValue)}>d8</button>
-        <button onClick={() => numberOfRolls(10, inputValue)}>d10</button>
-        <button onClick={() => numberOfRolls(12, inputValue)}>d12</button>
-        <button onClick={() => numberOfRolls(20, inputValue)}>d20</button>
-        <button onClick={() => numberOfRolls(100, inputValue)}>d100</button>
-      </div>
+      <DiceButtonDivStyled>
+        <DiceButtonStyled onClick={() => numberOfRolls(4, inputValue)}>d4</DiceButtonStyled>
+        <DiceButtonStyled onClick={() => numberOfRolls(6, inputValue)}>d6</DiceButtonStyled>
+        <DiceButtonStyled onClick={() => numberOfRolls(8, inputValue)}>d8</DiceButtonStyled>
+        <DiceButtonStyled onClick={() => numberOfRolls(10, inputValue)}>d10</DiceButtonStyled>
+        <DiceButtonStyled onClick={() => numberOfRolls(12, inputValue)}>d12</DiceButtonStyled>
+        <DiceButtonStyled onClick={() => numberOfRolls(20, inputValue)}>d20</DiceButtonStyled>
+        <DiceButtonStyled onClick={() => numberOfRolls(100, inputValue)}>d100</DiceButtonStyled>
+      </DiceButtonDivStyled>
       <div>
         {inputValue === 1 ? (
           <div>
@@ -125,6 +131,7 @@ function App() {
         })}
       </div>
     </div>
+    </ThemeProvider>
   );
 }
 
